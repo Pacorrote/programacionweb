@@ -101,247 +101,141 @@ router.delete("/borrar", function(req, res, next) {
 // NODEJS,
 //     EXPRESS,
 //    MongoDB /Postgresql
-router.get('/Ordenar',function(req,res,next){
+router.get("/Ordenar", function(req, res, next) {
+  estudianteModel.getOrdenEstudiante(function(err, result) {
+    console.log("/");
 
-  estudianteModel.getOrdenEstudiante(function(err,result){
+    if (err)
+      res.json({
+        response: "Error",
 
-      console.log('/');
+        msg: err
+      });
 
-      if(err)
+    console.log("res ", result);
 
-          res.json(
+    res.json({
+      response: result,
 
-              {
-
-                  "response": "Error",
-
-                  "msg": err
-
-              }
-
-          );
-
-          console.log('res ',result);
-
-          res.json(
-
-              {
-
-                  "response": result,
-
-                  "msg": "200"
-
-              }
-
-          );
-
+      msg: "200"
+    });
   });
-
 });
 
+router.get("/municipio", function(req, res, next) {
+  estudianteModel.getMunicipio(function(err, result) {
+    console.log("/");
 
+    if (err)
+      res.json({
+        response: "Error",
 
-router.get('/municipio',function(req,res,next){
+        msg: err
+      });
 
-  estudianteModel.getMunicipio(function(err,result){
+    console.log("res ", result);
 
-      console.log('/');
+    res.json({
+      response: result,
 
-      if(err)
-
-          res.json(
-
-              {
-
-                  "response": "Error",
-
-                  "msg": err
-
-              }
-
-          );
-
-          console.log('res ',result);
-
-          res.json(
-
-              {
-
-                  "response": result,
-
-                  "msg": "200"
-
-              }
-
-          );
-
+      msg: "200"
+    });
   });
-
 });
 
+router.get("/promedio", function(req, res, next) {
+  estudianteModel.getPromedio(function(err, result) {
+    console.log("/");
 
+    if (err)
+      res.json({
+        response: "Error",
 
-router.get('/promedio',function(req,res,next){
+        msg: err
+      });
 
-  estudianteModel.getPromedio(function(err,result){
+    console.log("res ", result);
 
-      console.log('/');
+    res.json({
+      response: result,
 
-      if(err)
-
-          res.json(
-
-              {
-
-                  "response": "Error",
-
-                  "msg": err
-
-              }
-
-          );
-
-          console.log('res ',result);
-
-          res.json(
-
-              {
-
-                  "response": result,
-
-                  "msg": "200"
-
-              }
-
-          );
-
+      msg: "200"
+    });
   });
-
 });
 
+router.get("/escuela", function(req, res, next) {
+  estudianteModel.getEscuela(function(err, result) {
+    console.log("/");
 
+    if (err)
+      res.json({
+        response: "Error",
 
-router.get('/escuela',function(req,res,next){
+        msg: err
+      });
 
-  estudianteModel.getEscuela(function(err,result){
+    console.log("res ", result);
 
-      console.log('/');
+    res.json({
+      response: result,
 
-      if(err)
-
-          res.json(
-
-              {
-
-                  "response": "Error",
-
-                  "msg": err
-
-              }
-
-          );
-
-          console.log('res ',result);
-
-          res.json(
-
-              {
-
-                  "response": result,
-
-                  "msg": "200"
-
-              }
-
-          );
-
+      msg: "200"
+    });
   });
-
 });
 
+router.put("/actualizardireccion", function(req, res, next) {
+  var direccion = {
+    calle: req.body.calle,
 
+    colonia: req.body.colonia,
 
-router.put('/actualizardireccion', function(req, res, next) {
+    municipio: req.body.municipio,
 
-  var direccion={
+    estado: req.body.estado,
 
-      "calle":req.body.calle,
+    pais: req.body.pais,
 
-      "colonia":req.body.colonia,
-
-      "municipio":req.body.municipio,
-
-      "estado":req.body.estado,
-
-      "pais":req.body.pais,
-
-      "codigopostal":req.body.codigoPostal,
-
+    codigopostal: req.body.codigoPostal
   };
 
-  console.log("/actualizar"+"id_estudiante"+req.body.id);
+  console.log("/actualizar" + "id_estudiante" + req.body.id);
 
-  estudianteModel.updatedireccion(direccion,req.body, function(err,result){
+  estudianteModel.updatedireccion(direccion, req.body, function(err, result) {
+    if (err)
+      res.json({
+        response: "Error",
 
-      if(err)
+        msg: err
+      });
 
-         res.json(
+    console.log("res", result);
 
-             {"response": "Error",
+    res.json({
+      response: result,
 
-                 "msg":err
-
-             }
-
-         );
-
-         console.log('res',result);
-
-         res.json(
-
-             {"response":result,
-
-                 "msg": "200"
-
-             }
-
-         );
-
-  })
-
+      msg: "200"
+    });
+  });
 });
 
+router.put("/eliminarestatus", function(req, res, next) {
+  estudianteModel.updateEstatus(function(err, result) {
+    if (err)
+      res.json({
+        response: "Error",
 
+        msg: err
+      });
 
-router.put('/eliminarestatus', function(req, res, next) {
+    console.log("res", result);
 
-  estudianteModel.updateEstatus(function(err,result){
+    res.json({
+      response: result,
 
-      if(err)
-
-         res.json(
-
-             {"response": "Error",
-
-                 "msg":err
-
-             }
-
-         );
-
-         console.log('res',result);
-
-         res.json(
-
-             {"response":result,
-
-                 "msg": "200"
-
-             }
-
-         );
-
-  })
-
+      msg: "200"
+    });
+  });
 });
 module.exports = router;
