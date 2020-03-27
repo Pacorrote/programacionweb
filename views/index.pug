@@ -1,29 +1,32 @@
 extends layout
 
 block content
-  div
-    a(href="") Inicio
-  div
-    a(href="registroEstudiante.pug") Registrar Estudiante
-  div
-    a(href="") Buscar Estudiante
-  div
-    a(href="") Eliminar Estudiante
-  div
-    a(href="") Actualizar Datos Estudiante
+  nav
+    div
+      a(href="") Inicio
+    div
+      a(href="registroEstudiante.pug") Registrar Estudiante
+    div
+      a(href="") Buscar Estudiante
+    div
+      a(href="") Eliminar Estudiante
+    div
+      a(href="") Actualizar Datos Estudiante
   center
     h2 Lista de Estudiantes
-  table(boder="2")
-    tr
+    input(type="text", name="datoBuscar", id="datoBuscar", 
+      placeholder="Ingrese el dato")
+    button(id="buscar") Enviar
+  br
+  br
+  table(border="1", width="400")
+    thead
       td Nombre
       td Apellido Paterno
       td Apellido Materno
-    tr
-      td
-      td
-      td
-    tr
-      td
-      td
-      td
+    tbody(id="tabla")
+      
+
+  script(src="/javascripts/jquery.js")
+  script(src="/javascripts/funciones.js")  
 
