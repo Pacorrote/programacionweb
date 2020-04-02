@@ -5,14 +5,23 @@ const estudiante = function(estudiante) {
 };
 
 estudiante.getEstudiantes = function(resultado) {
-  db.query("Select * from estudiante", function(err, res) {
-    if (err) {
-      console.log("error: ", err);
-      resultado(err, null);
-    } else {
-      resultado(null, res);
+  db.query(
+    `SELECT e.id_estudiante, 
+  p.nombre, 
+  p.apellidoPat, 
+  p.apellidoMat 
+  FROM persona as p, 
+  estudiante as e 
+  where e.id_persona = p.id_persona`,
+    function(err, res) {
+      if (err) {
+        console.log("error: ", err);
+        resultado(err, null);
+      } else {
+        resultado(null, res);
+      }
     }
-  });
+  );
 };
 
 estudiante.getEstudiantesId = function(estudianteId, resultado) {
