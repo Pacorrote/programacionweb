@@ -8,7 +8,7 @@ $(function() {
       type: "PUT",
       contentType: "application/json",
       dataType: "json",
-      succes: function(respuesta) {
+      success: function(respuesta) {
         alert(respuesta.response);
       },
       error: function(err) {
@@ -21,6 +21,7 @@ $(function() {
 
 $(document).ready(function() {
   //líneas a ejecutarse
+
   const tbodyTabla = $("#tabla");
   $.ajax({
     url: "http://localhost:3000/estudiante/",
@@ -29,7 +30,7 @@ $(document).ready(function() {
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     contentType: "application/json; charset=utf-8",
     dataType: "json",
-    succes: respuesta => {
+    success: respuesta => {
       console.log(respuesta.msg);
       for (let index = 0; index < respuesta.response.length; index++) {
         console.log(
