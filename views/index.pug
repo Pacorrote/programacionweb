@@ -5,18 +5,20 @@ block content
     div
       a(href="") Inicio
     div
-      a(href="registroEstudiante.pug") Registrar Estudiante
+      a(href="/estudiante/insertarusuario") Registrar Estudiante
     div
-      a(href="") Buscar Estudiante
+      a(href="/estudiante/busqueda") Buscar Estudiante
     div
-      a(href="") Eliminar Estudiante
+      a(href="/estudiante/eliminarestudiante") Eliminar Estudiante
     div
-      a(href="") Actualizar Datos Estudiante
+      a(href="/actualizarestudiante") Actualizar Datos Estudiante
+    div
+      a(href="/actualizadireccionestudiante") Actualizar dirección estudiante
   center
     h2 Lista de Estudiantes
     input(type="text", name="datoBuscar", id="datoBuscar", 
       placeholder="Ingrese el dato")
-    button(id="buscar") Enviar
+    button(id="buscar1") Enviar
   br
   br
   table(border="1", width="400")

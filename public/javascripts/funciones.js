@@ -1,8 +1,8 @@
 $(function() {
-  $("#buscar").click(function() {
-    let dato = $("#datoBuscar").val();
-    alert("Dio click al boton " + dato);
-    let tbodyTabla = $("tabla");
+  $("#buscar").change(function() {
+    let modo = $("#buscar").val();
+    alert("Dio click al combobox: " + modo);
+    //let tbodyTabla = $("tabla");
     $.ajax({
       url: "http://localhost:3000/estudiante/",
       data: {},
@@ -11,9 +11,9 @@ $(function() {
       dataType: "json",
       succes: function(respuesta) {
         console.log("La respuesta:", respuesta.msg);
-        for (let i = 0; i < respuesta.response.length; i++) {
-          tbodyTabla.append("<td></td>");
-        }
+        // for (let i = 0; i < respuesta.response.length; i++) {
+
+        // }
         //alert(respuesta);
       },
       error: function(err) {
@@ -22,11 +22,12 @@ $(function() {
       }
     });
   });
+});
 
-  $("#buscar1").click(function() {
-    let dato = $("#datoBuscar").val();
-    alert("Dio click al boton " + dato);
-    let tbodyTabla = $("tabla");
+$(function() {
+  $("#eliminarBYEstatus").click(function() {
+    alert("Está eliminando a un estudiante");
+    //let tbodyTabla = $("tabla");
     $.ajax({
       url: "http://localhost:3000/estudiante/",
       data: {},
@@ -35,33 +36,9 @@ $(function() {
       dataType: "json",
       succes: function(respuesta) {
         console.log("La respuesta:", respuesta.msg);
-        for (let i = 0; i < respuesta.response.length; i++) {
-          tbodyTabla.append("<td></td>");
-        }
-        //alert(respuesta);
-      },
-      error: function(err) {
-        console.log(err);
-        alert(err);
-      }
-    });
-  });
+        // for (let i = 0; i < respuesta.response.length; i++) {
 
-  $("#eliminar").click(function() {
-    let dato = $("#datoBuscar").val();
-    alert("Dio click al boton " + dato);
-    let tbodyTabla = $("tabla");
-    $.ajax({
-      url: "http://localhost:3000/estudiante/",
-      data: {},
-      type: "GET",
-      contentType: "application/json",
-      dataType: "json",
-      succes: function(respuesta) {
-        console.log("La respuesta:", respuesta.msg);
-        for (let i = 0; i < respuesta.response.length; i++) {
-          tbodyTabla.append("<td></td>");
-        }
+        // }
         //alert(respuesta);
       },
       error: function(err) {

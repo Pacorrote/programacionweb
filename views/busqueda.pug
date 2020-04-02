@@ -1,14 +1,22 @@
 doctype html
 html
   head
-    title Busqueda de estudiante
+    title title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     h2 Buscar estudiante
-    input#(type="text", name="")
-    button(id="buscar1") Enviar
-    table
-        tr
-            td Nombre
-            td Apellido Paterno
-            td Apellido Materno
+    div buscar por 
+      select(id="buscar")
+        option(value="Municipio") Municipio
+        option(value="Promedio") Promedio
+        option(value="Escuela") Escuela
+
+    br
+    br
+    table(border="1")
+      thead
+        td Nombre
+        td Valor
+      tbody(id="tabla")
+  script(src="/javascripts/jquery.js")
+  script(src="/javascripts/funciones.js")  

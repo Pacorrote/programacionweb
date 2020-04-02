@@ -238,4 +238,22 @@ router.put("/eliminarestatus", function(req, res, next) {
     });
   });
 });
+
+router.get("/eliminarestudiante", function(req, res, next) {
+  res.render("eliminarEstudiante", {
+    title: "Eliminar estudiante por Estatus"
+  });
+});
+router.get("/busqueda", function(req, res, next) {
+  res.render("busqueda", { title: "Buscar estudiante" });
+});
+router.get("/insertarusuario", function(req, res, next) {
+  res.render("insertarEstudiante", { title: "Buscar estudiante" });
+});
+router.get("/actualizarestudiante", function(req, res, next) {
+  res.render("updateEstudiante", { title: "Buscar estudiante" });
+});
+router.get("/actualizadireccionestudiante", function(req, res, next) {
+  res.render("updateDireccxestud", { title: "Buscar estudiante" });
+});
 module.exports = router;
