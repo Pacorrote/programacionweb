@@ -29,6 +29,7 @@ app.use("/users", usersRouter);
 app.use("/estudiante", estudianteRouter);
 app.use("/sexo", sexoRouter);
 app.use("/estado", estadoRouter);
+app.use("/jquery", express.static(__dirname + "/node_modules/jquery/dist/"));
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

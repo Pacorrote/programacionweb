@@ -7,6 +7,8 @@ html
     form(action="")
         fieldset
             p
+                select(id="id_estudiante")
+            p
                 <label for="curp">CURP:</label> <input type="text" id="curp">
             p
                 <label for="estatus">Estatus:</label> <input type="text" id="estatus">
@@ -20,6 +22,7 @@ html
                 <label for="id_academico">ID Académico:</label> <input type="number" id="id_academico">
             p
                 <label for="id_tutor">ID Tutor:</label> <input type="number" id="id_tutor">
-            input(type="submit" value="Actualizar dirección")
-  script(src="/javascripts/jquery.js")
+            input(type="submit", value="Actualizar estudiante", id="actualizar")
+  script(src="/jquery/jquery.js")
+  script(src="/javascripts/cargas/readyActualizacion.js")
   script(src="/javascripts/funciones.js")  

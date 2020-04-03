@@ -122,7 +122,7 @@ router.get("/Ordenar", function(req, res, next) {
   });
 });
 
-router.get("/municipio", function(req, res, next) {
+router.get("/Municipio", function(req, res, next) {
   estudianteModel.getMunicipio(function(err, result) {
     console.log("/");
 
@@ -143,7 +143,7 @@ router.get("/municipio", function(req, res, next) {
   });
 });
 
-router.get("/promedio", function(req, res, next) {
+router.get("/Promedio", function(req, res, next) {
   estudianteModel.getPromedio(function(err, result) {
     console.log("/");
 
@@ -164,7 +164,7 @@ router.get("/promedio", function(req, res, next) {
   });
 });
 
-router.get("/escuela", function(req, res, next) {
+router.get("/Escuela", function(req, res, next) {
   estudianteModel.getEscuela(function(err, result) {
     console.log("/");
 

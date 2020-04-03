@@ -7,6 +7,9 @@ html
     form(action="")
         fieldset
             p
+                select(id="id_estudiante")
+                
+            p
                 <label for="calle">Calle:</label> <input type="text" id="calle">
             p
                 <label for="colonia">Numero:</label> <input type="text" id="colonia">
@@ -18,6 +21,7 @@ html
                 <label for="pais">Pais:</label> <input type="text" id="pais">
             p
                 <label for="cp">C.P.:</label> <input type="number" id="cp">
-            input(type="submit" value="Actualizar dirección")
-  script(src="/javascripts/jquery.js")
+            input(type="submit", value="Actualizar dirección", , id="submitActDirEst")
+  script(src="/jquery/jquery.js")
+  script(src="/javascripts/cargas/readyActualizacion.js")
   script(src="/javascripts/funciones.js")  

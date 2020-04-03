@@ -21,9 +21,11 @@ html
             p
                 <label for="celular">Celular:</label> <input type="phone" id="celular">
             p
+                <label for="telefono">Telefono:</label> <input type="phone" id="telefono">
+            p
                 <label for="calle">Calle:</label> <input type="text" id="calle">
             p
-                <label for="colonia">Numero:</label> <input type="text" id="colonia">
+                <label for="colonia">Colonia:</label> <input type="text" id="colonia">
             p
                 <label for="municipio">Municipio:</label> <input type="text" id="municipio">
             p
@@ -35,16 +37,14 @@ html
             p
                 <label for="curp">CURP:</label> <input type="text" id="curp">
             p
-                <label for="fechanac">Fecha de nacimiento:</label> <input type="date" id="fechanac">
-            p
                 <label for="tipoSangre">Tipo de sangre:</label> <input type="text" id="tipoSangre">
             p
                 <label for="nss">NSS:</label> <input type="text" id="nss">
             p
                 <label for="alergias">Alergias:</label> <input type="text" id="alergias">
             p
-                <label for="status">Estatus:</label> 
-                <select id="status">
+                <label for="estado">Estado:</label> 
+                <select id="estado">
                 
                 </select>
             p
@@ -52,7 +52,11 @@ html
             p
                 <label for="id_academico">id academico:</label> <input type="number" id="id_academico">
             p
-                <label for="id_tutor">EMAIL:</label> <input type="number" id="id_tutor">
-            input(type="submit" value="Ingresar estudiante")
-  script(src="/javascripts/jquery.js")
+                <label for="status">estatus:</label> <input type="number" id="status">
+            p
+                <label for="id_tutor">id tutor:</label> <input type="number" id="id_tutor">
+            center
+                input(type="submit", value="Ingresar estudiante", id="submitIngresar")
+  script(src="/jquery/jquery.js")
+  script(src="/javascripts/cargas/readyInsertar.js")
   script(src="/javascripts/funciones.js")  

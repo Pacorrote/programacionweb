@@ -135,7 +135,7 @@ estudiante.getOrdenEstudiante = function(resultado) {
 
 estudiante.getMunicipio = function(resultado) {
   db.query(
-    "SELECT p.nombre,d.municipio from persona p, estudiante e,direccion d WHERE e.id_persona = p.id_persona and p.id_direccion = d.id_direccion",
+    "SELECT p.nombre,d.municipio as Valor from persona p, estudiante e,direccion d WHERE e.id_persona = p.id_persona and p.id_direccion = d.id_direccion",
     function(err, res) {
       if (err) {
         console.log("erro: ", err);
@@ -150,11 +150,10 @@ estudiante.getMunicipio = function(resultado) {
 
 estudiante.getPromedio = function(resultado) {
   db.query(
-    "SELECT p.nombre,d.promedio from persona p, estudiante e,academico d WHERE e.id_persona = p.id_persona and p.id_direccion = d.id_academico",
+    "SELECT p.nombre,d.promedio as Valor from persona p, estudiante e,academico d WHERE e.id_persona = p.id_persona and p.id_direccion = d.id_academico",
     function(err, res) {
       if (err) {
         console.log("erro: ", err);
-
         resultado(err, null);
       } else {
         resultado(err, res);
@@ -165,7 +164,7 @@ estudiante.getPromedio = function(resultado) {
 
 estudiante.getEscuela = function(resultado) {
   db.query(
-    "SELECT p.nombre,d.escuelaE from persona p, estudiante e,academico d WHERE e.id_persona = p.id_persona and p.id_direccion = d.id_academico",
+    "SELECT p.nombre,d.escuela as Valor from persona p, estudiante e,academico d WHERE e.id_persona = p.id_persona and p.id_direccion = d.id_academico",
     function(err, res) {
       if (err) {
         console.log("erro: ", err);

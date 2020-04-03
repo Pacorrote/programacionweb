@@ -21,45 +21,6 @@ contacto.addContacto = function(body, result) {
       }
     }
   );
-
-  //   db.query(
-  //     "INSERT INTO dire (telefono, email, celular) values(?,?,?)",
-  //     [body.telefono, body.email, body.celular],
-  //     function(err, res) {
-  //       if (err) {
-  //         console.log("error: ", err);
-  //         result(err, null);
-  //       } else {
-  //         result(null, res);
-  //       }
-  //     }
-  //   );
-
-  //   db.query(
-  //     "INSERT INTO salud (telefono, email, celular) values(?,?,?)",
-  //     [body.telefono, body.email, body.celular],
-  //     function(err, res) {
-  //       if (err) {
-  //         console.log("error: ", err);
-  //         result(err, null);
-  //       } else {
-  //         result(null, res);
-  //       }
-  //     }
-  //   );
-
-  //   db.query(
-  //     "INSERT INTO estudiante (telefono, email, celular) values(?,?,?)",
-  //     [body.telefono, body.email, body.celular],
-  //     function(err, res) {
-  //       if (err) {
-  //         console.log("error: ", err);
-  //         result(err, null);
-  //       } else {
-  //         result(null, res);
-  //       }
-  //     }
-  //   );
 };
 
 contacto.getContacto = function(body) {
