@@ -78,9 +78,17 @@ router.put("/actualizar", function(req, res, next) {
       " id: " +
       req.body.id_estudiante +
       " nombre: " +
-      req.body.nombre +
+      req.body.curp +
       " apellido: " +
-      req.body.apellido
+      req.body.estatus +
+      " apellido: " +
+      req.body.id_salud +
+      " apellido: " +
+      req.body.id_persona +
+      " apellido: " +
+      req.body.id_academico +
+      " apellido: " +
+      req.body.id_tutor
   );
   estudianteModel.updateEstudiante(req.body, function(err, result) {
     if (err) {

@@ -33,9 +33,9 @@ $(document).ready(function() {
       console.log(respuesta.msg);
       for (let index = 0; index < respuesta.response.length; index++) {
         console.log(
-          respuesta.response[index].id_estudiante +
+          respuesta.response[index].id_estado +
             " " +
-            respuesta.response[index].nombre
+            respuesta.response[index].descripcion
         );
         selectstatus.append(`
             <option>${respuesta.response[index].id_estado}</option>
